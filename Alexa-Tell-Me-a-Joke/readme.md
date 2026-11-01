@@ -1,85 +1,83 @@
-# Alexa – Tell Me a Joke
+# Alexa Tell Me a Joke
 
-## Project Description
+## About the Project
 
-This is a simple C++ console application that simulates a basic Alexa-style joke assistant. Users can type commands to receive a random joke, check how many jokes are available, or exit the application.
+Alexa Tell Me a Joke is a C++ command-line application that responds to specific user commands and displays jokes stored in an external text file.
 
-The project uses object-oriented programming, file handling, vectors, string manipulation and random number generation.
+I developed this project to practise object-oriented programming, file handling, user input processing and random number generation.
 
 ## Features
 
-- Loads jokes from an external text file.
-- Displays a random joke when requested.
-- Shows the total number of valid jokes available.
-- Avoids repeating the same joke twice in a row when more than one joke is available.
-- Requires commands to match the expected text exactly, including uppercase and lowercase letters.
-- Rejects incomplete or incorrectly written commands.
-- Handles unrecognised commands with an error message.
-- Allows users to exit by typing `exit`.
+- Read jokes from an external file called `alexa.txt`.
+- Display a randomly selected joke.
+- Prevent the same joke from appearing twice consecutively.
+- Display the total number of available jokes.
+- Recognise specific user commands.
+- Handle unrecognised commands.
+- Allow users to exit the application.
 
-## Project Files
+## How It Works
 
-- `alexa.cpp` – Contains the main program, the `Joke` structure and the `JokeAssistant` class.
-- `alexa.txt` – Stores the jokes used by the application.
-- `readme.md` – Provides project documentation and instructions.
+The application uses a class called `JokeAssistant` to organise its main functionality.
+
+A structure called `Joke` represents joke information.
+
+When the application starts, it reads jokes from `alexa.txt` and stores them in memory.
+
+The user can enter one of the following commands:
+
+| Command | Action |
+|---|---|
+| `Alexa tell me a joke` | Displays a randomly selected joke |
+| `Alexa how many jokes do you know` | Displays the number of available jokes |
+| `exit` | Closes the application |
+
+Commands are case-sensitive and must match the expected text.
+
+The application uses conditional statements to identify commands and a loop to continue accepting input until the user exits.
+
+Random selection allows different jokes to appear. The program also prevents immediate repetition of the previously selected joke.
 
 ## Requirements
 
-- A C++17-compatible compiler, such as `g++`.
-- Visual Studio Code or another code editor.
+- A C++ compiler supporting C++17.
+- A terminal or development environment such as Visual Studio Code.
+- The `alexa.txt` file containing the jokes.
 
 ## How to Compile and Run
 
-Make sure the terminal is open in the project folder and that the source code and joke text file are in the same directory.
+Open a terminal in the `Alexa-Tell-Me-a-Joke` folder.
 
 Compile the program:
 
 ```bash
-g++ -std=c++17 -Wall -Wextra -pedantic alexa.cpp -o AlexaJokes
+g++ -std=c++17 -Wall -Wextra -pedantic alexa.cpp -o Alexa
 ```
 
 Run the application:
 
 ```bash
-./AlexaJokes
+./Alexa
 ```
 
-## Available Commands
+Make sure `alexa.txt` is in the same folder when running the program.
 
-| Command | Description |
-|---|---|
-| `Alexa tell me a joke` | Displays a random joke. |
-| `Alexa how many jokes do you know` | Shows the number of valid jokes loaded. |
-| `exit` | Closes the application. |
+## Project Files
 
-Commands are case-sensitive and must be entered exactly as shown.
+- `alexa.cpp`: Contains the C++ source code.
+- `alexa.txt`: Contains the jokes used by the application.
+- `readme.md`: Contains project documentation and instructions.
 
-For example, `tell me a joke` and `alexa tell me a joke` are not accepted.
+## Testing
 
-## Example
+I compiled and ran the program in the terminal.
 
-```text
-Alexa Joke Assistant is ready!
-Type: Alexa tell me a joke
-Type: Alexa how many jokes do you know
-Type: exit to close the program.
+I tested the supported commands, checked that jokes were loaded from the text file and verified that the application responded to user input.
 
-You: tell me a joke
-Alexa: Invalid command.
+I also checked the random joke selection and exit functionality.
 
-You: Alexa tell me a joke
-Alexa: Why did the computer go to the doctor? It had a virus!
+## What I Learned
 
-You: exit
-Alexa: Goodbye!
-```
+This project helped me improve my understanding of C++ classes, structures, file handling, functions, loops and conditional statements.
 
-*The example above is illustrative; the actual joke depends on the contents of `alexa.txt`.*
-
-## Learning Outcomes
-
-Through this project, I practised working with C++ structures and classes, reading data from text files, storing information in vectors, processing user input and generating random numbers. I also practised testing the application and handling invalid commands.
-
-## Author
-
-Created as part of my C++ programming practice and university programming portfolio.
+I also practised random number generation, organising program functionality and testing an interactive command-line application.
