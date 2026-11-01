@@ -1,30 +1,45 @@
 # CO2 Emission Calculator
 
-## About the Project
+## About My Project
 
-This is a C++ console application that estimates carbon dioxide (CO2) emissions from travelling by car, bus or train. I developed this project to practise my programming skills and apply C++ concepts to a practical environmental calculation.
+For this project, I created a CO2 Emission Calculator using C++. I wanted to make a simple program that could estimate how much CO2 is produced when travelling by different types of transport.
 
-## Features
+I chose this idea because it allowed me to practise calculations, functions and user input while working on a practical example.
 
-- Enter a travel distance in kilometres or miles.
-- Automatically convert miles into kilometres.
-- Choose between three transport methods: car, bus or train.
-- Select petrol, diesel or electric when choosing a car.
-- Calculate estimated CO2 emissions in kilograms.
-- Validate user input and request valid values when necessary.
-- Display the calculated result with two decimal places.
+## What My Program Can Do
 
-## How It Works
+- Ask the user to enter a travel distance.
+- Accept distances in kilometres or miles.
+- Convert miles into kilometres.
+- Let the user choose between car, bus and train.
+- Allow petrol, diesel or electric options for cars.
+- Calculate estimated CO2 emissions.
+- Display the result in kilograms.
+- Check incorrect input and ask the user to try again.
 
-The program asks the user to enter a travel distance and select the measurement unit.
+## How I Made It Work
 
-If the distance is entered in miles, the program converts it into kilometres using a conversion factor of 1.60934.
+I divided the program into separate functions to make the code easier to understand.
 
-The user then selects a transport method. When choosing a car, the program also asks for the fuel type.
+The program first asks for the distance and the measurement unit.
 
-The calculator uses the following illustrative emission factors:
+If the user selects miles, the program converts the distance into kilometres.
 
-| Transport | Emission Factor (kg CO2/km) |
+After that, the user chooses the transport type. If they select a car, the program also asks for the fuel type.
+
+Each transport option has an emission factor that the program uses for the calculation.
+
+The formula is:
+
+CO2 emissions = Distance in kilometres × Emission factor
+
+For example, if the user enters 100 kilometres and selects a petrol car, the program calculates:
+
+100 × 0.192 = 19.20 kg CO2
+
+## Emission Factors Used
+
+| Transport | kg CO2/km |
 |---|---|
 | Petrol car | 0.192 |
 | Diesel car | 0.171 |
@@ -32,30 +47,19 @@ The calculator uses the following illustrative emission factors:
 | Bus | 0.105 |
 | Train | 0.035 |
 
-The calculation uses the formula:
+These are example values used for my programming project. They are not intended to provide exact real-world emission measurements.
 
-Estimated CO2 emissions (kg) = Distance (km) × Emission factor (kg/km)
+## How to Run My Program
 
-For example, travelling 100 km in a petrol car produces an estimated 19.20 kg of CO2 using the project's illustrative factor.
+I used Visual Studio Code and the terminal to compile and test my application.
 
-The application uses separate functions to manage user input, transport selection, calculations and result display.
-
-## Requirements
-
-- A C++ compiler supporting C++17.
-- A terminal or development environment such as Visual Studio Code.
-
-## How to Compile and Run
-
-Open a terminal in the `CO2-Calculator` folder.
-
-Compile the program:
+Compile:
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -pedantic CalculatorCO2.cpp -o CalculatorCO2
 ```
 
-Run the application:
+Run:
 
 ```bash
 ./CalculatorCO2
@@ -63,17 +67,23 @@ Run the application:
 
 ## Project Files
 
-- `CalculatorCO2.cpp`: Contains the complete C++ source code.
-- `readme.md`: Contains the project description and instructions.
+- `CalculatorCO2.cpp`: My C++ calculator.
+- `readme.md`: Information about my project.
 
-## Notes
+## Testing
 
-The emission factors used in this project are illustrative values intended for educational purposes. They are not presented as official UK Government conversion factors.
+I compiled and ran the calculator in the terminal.
 
-Actual emissions depend on vehicle type, energy source, operating conditions and calculation methodology.
+I checked that I could enter a distance, select a transport method and receive a calculated result.
+
+I also checked how the program responded to invalid input.
 
 ## What I Learned
 
-Through this project, I improved my understanding of C++ functions, variables, conditional statements, loops, mathematical calculations and input validation.
+This project helped me practise using functions, variables, loops and conditional statements.
 
-I also practised organising a program into separate functions, compiling source code and testing calculations through a command-line interface.
+I also improved my understanding of mathematical calculations in C++ and how to check user input.
+
+I learned that dividing a program into smaller functions makes the code easier to read, test and change.
+
+Working on this calculator helped me understand how C++ can be used to solve a practical problem.
