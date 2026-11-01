@@ -1,83 +1,74 @@
 # Alexa Tell Me a Joke
 
-## About the Project
+## About My Project
 
-Alexa Tell Me a Joke is a C++ command-line application that responds to specific user commands and displays jokes stored in an external text file.
+For this project, I created a simple joke assistant using C++. I wanted to make a program that could respond to a few commands and tell jokes stored in a text file.
 
-I developed this project to practise object-oriented programming, file handling, user input processing and random number generation.
+I used this project to practise working with classes, functions, user input and file handling.
 
-## Features
+## What My Program Can Do
 
-- Read jokes from an external file called `alexa.txt`.
-- Display a randomly selected joke.
-- Prevent the same joke from appearing twice consecutively.
-- Display the total number of available jokes.
-- Recognise specific user commands.
-- Handle unrecognised commands.
-- Allow users to exit the application.
+- Read jokes from `alexa.txt`.
+- Tell a random joke when the user enters the correct command.
+- Avoid repeating the same joke twice in a row.
+- Show how many jokes are available.
+- Respond when the user enters an unknown command.
+- Close the program when the user types `exit`.
 
-## How It Works
+## How I Made It Work
 
-The application uses a class called `JokeAssistant` to organise its main functionality.
+I created a class called `JokeAssistant` to organise the main parts of my program. I also used a structure called `Joke` to store joke information.
 
-A structure called `Joke` represents joke information.
+Instead of putting all the jokes directly into the C++ code, I decided to keep them in a separate text file called `alexa.txt`.
 
-When the application starts, it reads jokes from `alexa.txt` and stores them in memory.
+The program reads this file and uses the jokes when the user asks for one.
 
-The user can enter one of the following commands:
+I added three commands:
 
-| Command | Action |
+| Command | What It Does |
 |---|---|
-| `Alexa tell me a joke` | Displays a randomly selected joke |
-| `Alexa how many jokes do you know` | Displays the number of available jokes |
-| `exit` | Closes the application |
+| `Alexa tell me a joke` | Tells a random joke |
+| `Alexa how many jokes do you know` | Shows the number of jokes |
+| `exit` | Closes the program |
 
-Commands are case-sensitive and must match the expected text.
+The commands must be typed exactly as shown, including capital letters.
 
-The application uses conditional statements to identify commands and a loop to continue accepting input until the user exits.
+I also added a check to stop the program from telling the same joke twice in a row.
 
-Random selection allows different jokes to appear. The program also prevents immediate repetition of the previously selected joke.
+## How to Run My Program
 
-## Requirements
+I used Visual Studio Code and the terminal to compile and test my code.
 
-- A C++ compiler supporting C++17.
-- A terminal or development environment such as Visual Studio Code.
-- The `alexa.txt` file containing the jokes.
-
-## How to Compile and Run
-
-Open a terminal in the `Alexa-Tell-Me-a-Joke` folder.
-
-Compile the program:
+Compile:
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -pedantic alexa.cpp -o Alexa
 ```
 
-Run the application:
+Run:
 
 ```bash
 ./Alexa
 ```
 
-Make sure `alexa.txt` is in the same folder when running the program.
+The `alexa.txt` file needs to be in the same folder.
 
 ## Project Files
 
-- `alexa.cpp`: Contains the C++ source code.
-- `alexa.txt`: Contains the jokes used by the application.
-- `readme.md`: Contains project documentation and instructions.
+- `alexa.cpp`: My C++ program.
+- `alexa.txt`: The jokes used by the program.
+- `readme.md`: Information about my project.
 
 ## Testing
 
-I compiled and ran the program in the terminal.
+I tested the program by entering the different commands and checking the responses.
 
-I tested the supported commands, checked that jokes were loaded from the text file and verified that the application responded to user input.
-
-I also checked the random joke selection and exit functionality.
+I also checked that the jokes loaded from the text file and that the program could close correctly.
 
 ## What I Learned
 
-This project helped me improve my understanding of C++ classes, structures, file handling, functions, loops and conditional statements.
+This project helped me understand how classes and functions work together.
 
-I also practised random number generation, organising program functionality and testing an interactive command-line application.
+I also learned more about reading information from files, using loops and conditions, and selecting random values.
+
+One useful part of this project was learning how to keep the jokes separate from the main code, making the program easier to update.
