@@ -1,119 +1,86 @@
 # Book Manager
 
-## About the Project
+## About My Project
 
-Book Manager is a C++ console application designed to manage a collection of books.
+For this project, I created a Book Manager application using C++. I wanted to build a program where I could store book information and manage it using a simple menu in the terminal.
 
-I developed this project to practise object-oriented programming, file handling, data management and input validation.
+This project was more detailed than my previous exercises because I had to work with different functions, classes and a text file.
 
-The application allows users to organise book records through an interactive menu.
+## What My Program Can Do
 
-## Features
+- Display all books.
+- Search for a book using its ID.
+- Add a new book.
+- Update book information.
+- Delete a book.
+- Show only available books.
+- Save book information in a text file.
+- Load saved books when the program starts.
 
-- Display all books in the collection.
-- Search for a book using its unique ID.
-- Add new books.
-- Update existing book information.
-- Delete books from the collection.
-- Display only available books.
-- Save book records to an external text file.
-- Load previously saved book records.
-- Validate user input and prevent duplicate book IDs.
+## How I Made It Work
 
-## How It Works
+I used two classes called `Book` and `BookManager`.
 
-The application uses two main classes.
+The `Book` class stores information about each book, including its title, author, number of pages, ID and availability.
 
-### Book Class
+The `BookManager` class handles the main operations, such as adding, searching, updating and deleting books.
 
-The `Book` class represents an individual book and stores the following information:
+I used a vector to keep the books together while the program is running.
 
-- Title
-- Author
-- Number of pages
-- Unique ID
-- Availability status
+I also created a menu so the user can choose what they want to do.
 
-The class uses private attributes and public methods to control access to book information.
+For example, when adding a new book, the program asks for the book information and checks that the ID is not already being used.
 
-### BookManager Class
+When updating a book, the user can change its title, author, number of pages and availability. The book ID stays the same.
 
-The `BookManager` class manages the collection of books.
+## Working With Files
 
-It uses a C++ vector to store book objects and provides methods for adding, updating, deleting, searching and displaying records.
+I used `bookData.txt` to save the book information.
 
-Users interact with the application through a console menu.
+When the program starts, it reads the saved records from this file.
 
-When adding a book, the program checks the information entered and verifies that the ID is unique.
+When a book is added, updated or deleted, the program saves the changes.
 
-When updating a book, users can modify the title, author, page count and availability status. The unique ID remains unchanged.
+This was an important part of the project because I wanted the book information to remain available after closing the application.
 
-When deleting a book, the program removes the selected record from the collection.
+## How to Run My Program
 
-The available-books feature displays only records marked as available.
+I used Visual Studio Code and the terminal to compile and run the project.
 
-### File Handling
-
-The program uses `bookData.txt` to store book information.
-
-Each record contains the book's title, author, page count, ID and availability status.
-
-The application loads existing records when it starts.
-
-When book information changes, the program saves the updated collection to the text file.
-
-This allows the records to remain available between program sessions.
-
-## Requirements
-
-- A C++ compiler supporting C++17.
-- A terminal or development environment such as Visual Studio Code.
-- The `bookData.txt` file containing the book records.
-
-## How to Compile and Run
-
-Open a terminal in the `Book-Manager` folder.
-
-Compile the program:
+Compile:
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -pedantic BookManager.cpp -o BookManager
 ```
 
-Run the application:
+Run:
 
 ```bash
 ./BookManager
 ```
 
-Keep `bookData.txt` in the same folder when running the application.
+The `bookData.txt` file needs to be in the same folder.
 
 ## Project Files
 
-- `BookManager.cpp`: Contains the `Book` and `BookManager` classes, functions and main application.
-- `bookData.txt`: Stores book records.
-- `readme.md`: Contains project documentation and instructions.
-
-## Input Validation
-
-The application includes checks to reduce incorrect data entry.
-
-These include validating numerical input, checking book IDs, preventing duplicate records and handling invalid availability values.
-
-The program also allows users to retain existing title or author information during an update by leaving the corresponding input empty.
+- `BookManager.cpp`: My main C++ source file.
+- `bookData.txt`: Stores the book information.
+- `readme.md`: Information about the project.
 
 ## Testing
 
-I compiled and ran the application in the terminal.
+I compiled the program and checked that the menu appeared correctly.
 
-I checked that the main menu appeared correctly and that existing book records could be loaded and displayed.
+I also tested loading and displaying the books from the text file.
 
-The project also includes functions for modifying records and saving changes.
+While working on the project, I made changes to improve the organisation of the code and how the program handles user input.
 
 ## What I Learned
 
-This project helped me improve my understanding of C++ classes, encapsulation, constructors, vectors, functions and file handling.
+This project helped me understand object-oriented programming in more detail.
 
-I also practised input validation, organising a larger application and storing information between program sessions.
+I practised using classes, constructors, vectors, functions and file handling.
 
-Working on this project helped me understand how different C++ components can work together to manage structured data.
+I also learned why checking user input is important, especially when adding or updating information.
+
+The most useful part for me was understanding how to connect different functions and classes to create one working application.
